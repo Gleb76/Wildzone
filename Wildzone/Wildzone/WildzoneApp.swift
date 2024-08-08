@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct WildzoneApp: App {
     var body: some Scene {
+        
+        let store = Store(reducer: appReducer, state: AppState())
         WindowGroup {
             ContentView()
         }
