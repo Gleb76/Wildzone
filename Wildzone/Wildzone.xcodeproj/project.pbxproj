@@ -51,8 +51,14 @@
 		772858282C65618F004DACCD /* Wildzone */ = {
 			isa = PBXGroup;
 			children = (
-				772858292C65618F004DACCD /* WildzoneApp.swift */,
+				777887762C6578F9002A73D0 /* Store */,
+				777887752C6578EB002A73D0 /* Extensions */,
+				777887742C65782F002A73D0 /* Views */,
+				777887732C657826002A73D0 /* Loaders */,
+				777887712C65777A002A73D0 /* Services */,
+				777887722C6577B4002A73D0 /* Utils */,
 				7728582B2C65618F004DACCD /* ContentView.swift */,
+				772858292C65618F004DACCD /* WildzoneApp.swift */,
 				7728582D2C656191004DACCD /* Assets.xcassets */,
 				7728582F2C656191004DACCD /* Preview Content */,
 			);
@@ -65,6 +71,56 @@
 				772858302C656191004DACCD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		777887712C65777A002A73D0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		777887722C6577B4002A73D0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		777887732C657826002A73D0 /* Loaders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Loaders;
+			sourceTree = "<group>";
+		};
+		777887742C65782F002A73D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		777887752C6578EB002A73D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		777887762C6578F9002A73D0 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				777887772C657902002A73D0 /* Reducers */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		777887772C657902002A73D0 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reducers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
