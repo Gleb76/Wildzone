@@ -82,9 +82,9 @@ struct FilmsScrollView: View {
             }
             
             List {
-                FilmViewDetail(imageName: "film1", title: "Film Title 1", description: "Short description of the film", rating: "The best Film")
-                FilmViewDetail(imageName: "film2", title: "Film Title 2", description: "Short description of the film", rating: "$The")
-                FilmViewDetail(imageName: "film3", title: "Film Title 3", description: "Short description of the film", rating: "$The")
+                FilmViewDetail(imageName: "film1", title: "Film Title 1", description: "Short description of the film", price: "The best Film")
+                FilmViewDetail(imageName: "film2", title: "Film Title 2", description: "Short description of the film", price: "$The")
+                FilmViewDetail(imageName: "film3", title: "Film Title 3", description: "Short description of the film", price: "$The")
             }
             .listStyle(PlainListStyle())
             
