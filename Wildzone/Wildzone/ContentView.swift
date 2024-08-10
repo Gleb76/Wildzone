@@ -8,23 +8,26 @@
 import SwiftUI
 import KinopoiskAPI
 
-struct NetworkWorker {
-    
-    var films: [MovieResponse] = []
-    
-    init() {}
-    
-    mutating func loadCharacters(complete: @escaping (_ data: MovieResponse?, _ error: Error?) -> Void) {
-        //        CharacterAPI.characterGet { data, error in
-        //            complete(data, error)
-//        KinopoiskAPI.titleGet(query: "А") { data, error in
+//struct NetworkWorker {
+//    
+//    var possibleValues: [MovieResponseModel] = []
+//    
+//    init() {}
+//    
+//    mutating func searchFilms(complete: @escaping (_ data: MovieResponseModel?, _ error: Error?) -> Void) {
+//        //        CharacterAPI.characterGet { data, error in
+//        //            complete(data, error)
+////        KinopoiskAPI.titleGet(query: "А") { data, error in
+////            complete(data, error)
+////        }
+////        KinopoiskAPI.searchFilmsGet(query: "1"){ data, error in
+////            complete(data, error)
+////        }
+//        KinopoiskAPI.getPossibleValuesByField(field: "") { data, error in
 //            complete(data, error)
 //        }
-        KinopoiskAPI.postersGet { data, error in
-            complete(data, error)
-        }
-    }
-}
+//    }
+//}
 
 
 //extension TitleGet200Response: Identifiable {
@@ -36,19 +39,21 @@ struct NetworkWorker {
 //    }
 //}
 
+import KinopoiskAPI
+
 struct ContentView: View {
     
-    @State var films: NetworkWorker = .init()
+    @State var networkProvider: KinopoiskValuesProvider = .init()
     
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Hello, World!")
         }
         .onAppear {
-            films.loadCharacters { data, error in
+            networkProvider.loadPossibleValues(field: "genres.name") { data, error in
                 print("============Data============")
                 print(data)
                 print("============Errors============")
