@@ -17,15 +17,15 @@ public struct TitleGet200ResponseDocsInnerRating: Codable, JSONEncodable, Hashab
     public var tmdb: Double
     public var filmCritics: Double
     public var russianFilmCritics: Double
-    public var await: Double
+    public var userAwait: Double
 
-    public init(kp: Double, imdb: Double, tmdb: Double, filmCritics: Double, russianFilmCritics: Double, await: Double) {
+    public init(kp: Double, imdb: Double, tmdb: Double, filmCritics: Double, russianFilmCritics: Double, userAwait: Double) {
         self.kp = kp
         self.imdb = imdb
         self.tmdb = tmdb
         self.filmCritics = filmCritics
         self.russianFilmCritics = russianFilmCritics
-        self.await = await
+        self.userAwait = userAwait
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
@@ -34,7 +34,7 @@ public struct TitleGet200ResponseDocsInnerRating: Codable, JSONEncodable, Hashab
         case tmdb
         case filmCritics
         case russianFilmCritics
-        case await
+        case userAwait = "await"
     }
 
     // Encodable protocol methods
@@ -46,7 +46,7 @@ public struct TitleGet200ResponseDocsInnerRating: Codable, JSONEncodable, Hashab
         try container.encode(tmdb, forKey: .tmdb)
         try container.encode(filmCritics, forKey: .filmCritics)
         try container.encode(russianFilmCritics, forKey: .russianFilmCritics)
-        try container.encode(await, forKey: .await)
+        try container.encode(userAwait, forKey: .userAwait)
     }
 }
 

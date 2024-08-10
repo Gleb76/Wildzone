@@ -17,15 +17,15 @@ public struct TitleGet200ResponseDocsInnerVotes: Codable, JSONEncodable, Hashabl
     public var tmdb: Double
     public var filmCritics: Double
     public var russianFilmCritics: Double
-    public var await: Double
+    public var userAwait: Double
 
-    public init(kp: String, imdb: Double, tmdb: Double, filmCritics: Double, russianFilmCritics: Double, await: Double) {
+    public init(kp: String, imdb: Double, tmdb: Double, filmCritics: Double, russianFilmCritics: Double, userAwait: Double) {
         self.kp = kp
         self.imdb = imdb
         self.tmdb = tmdb
         self.filmCritics = filmCritics
         self.russianFilmCritics = russianFilmCritics
-        self.await = await
+        self.userAwait = userAwait
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
@@ -34,10 +34,10 @@ public struct TitleGet200ResponseDocsInnerVotes: Codable, JSONEncodable, Hashabl
         case tmdb
         case filmCritics
         case russianFilmCritics
-        case await
+        case userAwait = "await"
     }
 
-    // Encodable protocol methods
+    // Métodos del protocolo Encodable
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -46,7 +46,7 @@ public struct TitleGet200ResponseDocsInnerVotes: Codable, JSONEncodable, Hashabl
         try container.encode(tmdb, forKey: .tmdb)
         try container.encode(filmCritics, forKey: .filmCritics)
         try container.encode(russianFilmCritics, forKey: .russianFilmCritics)
-        try container.encode(await, forKey: .await)
+        try container.encode(userAwait, forKey: .userAwait)
     }
 }
 
