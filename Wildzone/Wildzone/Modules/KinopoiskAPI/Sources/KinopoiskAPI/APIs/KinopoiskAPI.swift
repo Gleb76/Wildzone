@@ -288,3 +288,19 @@ private extension KinopoiskAPI {
         )
     }
 }
+
+// Factory(Фабрика)
+class RequestFactory {
+    static func createPossibleValuesRequest(field: String) -> RequestBuilder<[PossibleValueModel]> {
+        return KinopoiskAPI.possibleValuesGetWithRequestBuilder(field: field)
+    }
+
+    static func createSearchFilmsRequest(query: String, page: Int, limit: Int) -> RequestBuilder<MovieResponseModel> {
+        return KinopoiskAPI.searchFilmsGetWithRequestBuilder(query: query, page: page, limit: limit)
+    }
+
+    static func createPostersRequest(movieId: [String], type: [String], language: [String], height: [String], width: [String], updatedAt: [String], createdAt: [String], page: Int, limit: Int) -> RequestBuilder<MovieResponseModel> {
+        return KinopoiskAPI.posterGetWithRequestBuilder(movieId: movieId, type: type, language: language, height: height, width: width, updatedAt: updatedAt, createdAt: createdAt, page: page, limit: limit)
+    }
+}
+

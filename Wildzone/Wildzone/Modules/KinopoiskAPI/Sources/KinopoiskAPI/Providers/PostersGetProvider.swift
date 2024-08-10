@@ -8,10 +8,13 @@
 import Foundation
 
 public struct PostersGetProvider {
+    private let repository: KinopoiskRepository
+
+    public init(repository: KinopoiskRepository) {
+        self.repository = repository
+    }
     
-    public init() {}
-    
-    mutating public func searchFilms(
+    public func getPosters(
         movieId: [String],
         type: [String],
         language: [String],
@@ -19,17 +22,21 @@ public struct PostersGetProvider {
         width: [String],
         updatedAt: [String],
         createdAt: [String],
+        page: Int = 1,
+        limit: Int = 10,
         complete: @escaping (_ data: MovieResponseModel?, _ error: Error?) -> Void
     ) {
-        KinopoiskAPI.postersGet(
+        repository.getPosters(
             movieId: movieId,
             type: type,
             language: language,
             height: height,
             width: width,
             updatedAt: updatedAt,
-            createdAt: createdAt) { data, error in
-                complete(data, error)
-            }
+            createdAt: createdAt,
+            page: page,
+            limit: limit,
+            completion: complete
+        )
     }
 }
