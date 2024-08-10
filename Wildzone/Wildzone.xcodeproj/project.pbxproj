@@ -18,6 +18,7 @@
 		777887812C658109002A73D0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777887802C658109002A73D0 /* String+Extensions.swift */; };
 		BCE3D6D92C67CA990007CA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE3D6D82C67CA990007CA7E /* Assets.xcassets */; };
 		BCE3D6E02C67CDCF0007CA7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE3D6DE2C67CDCF0007CA7E /* Preview Assets.xcassets */; };
+		BCE3D6E22C67FAEF0007CA7E /* WildZoneUISystem in Frameworks */ = {isa = PBXBuildFile; productRef = BCE3D6E12C67FAEF0007CA7E /* WildZoneUISystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				772B7DDF2C6628DC000634BD /* KinopoiskAPI in Frameworks */,
+				BCE3D6E22C67FAEF0007CA7E /* WildZoneUISystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +151,7 @@
 			name = Wildzone;
 			packageProductDependencies = (
 				772B7DDE2C6628DC000634BD /* KinopoiskAPI */,
+				BCE3D6E12C67FAEF0007CA7E /* WildZoneUISystem */,
 			);
 			productName = Wildzone;
 			productReference = 772858262C65618F004DACCD /* Wildzone.app */;
@@ -353,6 +356,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,6 +386,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,6 +427,10 @@
 		772B7DDE2C6628DC000634BD /* KinopoiskAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KinopoiskAPI;
+		};
+		BCE3D6E12C67FAEF0007CA7E /* WildZoneUISystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WildZoneUISystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
