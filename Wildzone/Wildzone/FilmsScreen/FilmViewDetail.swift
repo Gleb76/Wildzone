@@ -11,7 +11,7 @@ struct FilmViewDetail: View {
     var imageName: String
     var title: String
     var description: String
-    var price: String
+    var rating: String
     
     var body: some View {
         HStack(alignment: .top) {
@@ -25,7 +25,7 @@ struct FilmViewDetail: View {
                 Text(description)
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                Text(price)
+                Text(rating)
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(.orange)

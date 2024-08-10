@@ -77,6 +77,7 @@
 		772858282C65618F004DACCD /* Wildzone */ = {
 			isa = PBXGroup;
 			children = (
+				B8AEBEFB2C680D2F008B5CA0 /* Preview Content */,
 				7748D6E42C680619004DFBC6 /* FilmsScreen */,
 				777887762C6578F9002A73D0 /* Store */,
 				777887752C6578EB002A73D0 /* Extensions */,
@@ -141,6 +142,13 @@
 				7778877C2C657E18002A73D0 /* MoviesReducer.swift */,
 			);
 			path = Reducers;
+			sourceTree = "<group>";
+		};
+		B8AEBEFB2C680D2F008B5CA0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		BCE3D6DF2C67CDCF0007CA7E /* Preview Content */ = {
