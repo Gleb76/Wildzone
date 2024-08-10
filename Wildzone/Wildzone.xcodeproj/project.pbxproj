@@ -34,6 +34,7 @@
 		BCE3D6D82C67CA990007CA7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCE3D6DD2C67CD890007CA7E /* WildZoneUISystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = WildZoneUISystem; sourceTree = "<group>"; };
 		BCE3D6DE2C67CDCF0007CA7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCE3D6E32C67FE810007CA7E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 				BCE3D6DF2C67CDCF0007CA7E /* Preview Content */,
 				7728582B2C65618F004DACCD /* ContentView.swift */,
 				772858292C65618F004DACCD /* WildzoneApp.swift */,
+				BCE3D6E32C67FE810007CA7E /* Media.xcassets */,
 				BCE3D6D82C67CA990007CA7E /* Assets.xcassets */,
 			);
 			path = Wildzone;

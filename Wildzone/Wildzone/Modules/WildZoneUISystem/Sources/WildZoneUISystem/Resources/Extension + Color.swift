@@ -30,4 +30,5 @@ public extension Color {
     static let wbText = Color("wbText")
     static let wbWhite = Color("wbWhite")
     static let wbYellow = Color("wbYellowA")
+    static let wbBG = Color("wbBG")
 }

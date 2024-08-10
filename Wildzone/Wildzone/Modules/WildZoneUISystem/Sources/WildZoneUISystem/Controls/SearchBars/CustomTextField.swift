@@ -26,10 +26,10 @@ public struct CustomTextField: View {
             .foregroundColor(.wbFontBG)
             .focused($isFocused)
             .padding(EdgeInsets(top: 6, leading: 8, bottom: 6, trailing: 0))
-            .background(Color(.wbFontBG).cornerRadius(4))
+            .background(Color.wbFontBG.cornerRadius(4))
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(error ? Color.red : Color(.wbFontBG), lineWidth: 1)
+                    .stroke(error ? Color.red : Color.wbFontBG, lineWidth: 1)
             )
     }
 }
