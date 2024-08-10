@@ -9,11 +9,16 @@ import SwiftUI
 
 @main
 struct WildzoneApp: App {
+    @StateObject private var store = Store<AppState>(
+        reducer: appReducer,
+        state: AppState(),
+        middlewares: [loggingMiddleware]
+    )
+    
     var body: some Scene {
-        
-        let store = Store(reducer: appReducer, state: AppState())
         WindowGroup {
             ContentView()
+                .environmentObject(store)
         }
     }
 }
