@@ -5,14 +5,16 @@
 //  Created by Назар Ткаченко on 10.08.2024.
 //
 
-public struct KinopoiskValuesProvider {
-    
-    public init() {}
-    
-    mutating public func loadPossibleValues(field: String, complete: @escaping (_ data: [PossibleValueModel]?, _ error: Error?) -> Void) {
+import Foundation
 
-        KinopoiskAPI.getPossibleValuesByField(field: field) { data, error in
-            complete(data, error)
-        }
+public struct KinopoiskValuesProvider {
+    private let repository: KinopoiskRepository
+
+    public init(repository: KinopoiskRepository) {
+        self.repository = repository
+    }
+    
+    public func loadPossibleValues(field: String, complete: @escaping (_ data: [PossibleValueModel]?, _ error: Error?) -> Void) {
+        repository.getPossibleValues(field: field, completion: complete)
     }
 }
