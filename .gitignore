@@ -7,7 +7,7 @@
 *.xcuserdatad
 *.xcdebugger
 *.xcactivitylog
-*.xcassets
+# *.xcassets
 DerivedData/
 build/
 *.xcuserstate
