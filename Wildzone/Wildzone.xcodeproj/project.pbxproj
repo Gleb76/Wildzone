@@ -20,7 +20,6 @@
 		777887812C658109002A73D0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777887802C658109002A73D0 /* String+Extensions.swift */; };
 		77E6C16C2C67FDCA00E6AC8C /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6C16B2C67FDCA00E6AC8C /* Middleware.swift */; };
 		BCE3D6D92C67CA990007CA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE3D6D82C67CA990007CA7E /* Assets.xcassets */; };
-		BCE3D6E02C67CDCF0007CA7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE3D6DE2C67CDCF0007CA7E /* Preview Assets.xcassets */; };
 		BCE3D6E22C67FAEF0007CA7E /* WildZoneUISystem in Frameworks */ = {isa = PBXBuildFile; productRef = BCE3D6E12C67FAEF0007CA7E /* WildZoneUISystem */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,7 @@
 		77E6C16B2C67FDCA00E6AC8C /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		BCE3D6D82C67CA990007CA7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCE3D6DD2C67CD890007CA7E /* WildZoneUISystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = WildZoneUISystem; sourceTree = "<group>"; };
-		BCE3D6DE2C67CDCF0007CA7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCE3D6E32C67FE810007CA7E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +75,13 @@
 		772858282C65618F004DACCD /* Wildzone */ = {
 			isa = PBXGroup;
 			children = (
+				BCE3D6E52C681E7C0007CA7E /* Preview Content */,
 				7748D6E42C680619004DFBC6 /* FilmsScreen */,
 				777887762C6578F9002A73D0 /* Store */,
 				777887752C6578EB002A73D0 /* Extensions */,
-				BCE3D6DF2C67CDCF0007CA7E /* Preview Content */,
 				7728582B2C65618F004DACCD /* ContentView.swift */,
 				772858292C65618F004DACCD /* WildzoneApp.swift */,
+				BCE3D6E32C67FE810007CA7E /* Media.xcassets */,
 				BCE3D6D82C67CA990007CA7E /* Assets.xcassets */,
 			);
 			path = Wildzone;
@@ -141,13 +141,11 @@
 			path = Reducers;
 			sourceTree = "<group>";
 		};
-		BCE3D6DF2C67CDCF0007CA7E /* Preview Content */ = {
+		BCE3D6E52C681E7C0007CA7E /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				BCE3D6DE2C67CDCF0007CA7E /* Preview Assets.xcassets */,
 			);
-			name = "Preview Content";
-			path = "../../../Wildzone 2/Wildzone/Wildzone/Preview Content";
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +210,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCE3D6E02C67CDCF0007CA7E /* Preview Assets.xcassets in Resources */,
 				BCE3D6D92C67CA990007CA7E /* Assets.xcassets in Resources */,
 				772B7DE22C662A3E000634BD /* KinopoiskAPI in Resources */,
 			);
