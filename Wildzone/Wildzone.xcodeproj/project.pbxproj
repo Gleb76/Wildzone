@@ -11,6 +11,8 @@
 		7728582C2C65618F004DACCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7728582B2C65618F004DACCD /* ContentView.swift */; };
 		772B7DDF2C6628DC000634BD /* KinopoiskAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 772B7DDE2C6628DC000634BD /* KinopoiskAPI */; };
 		772B7DE22C662A3E000634BD /* KinopoiskAPI in Resources */ = {isa = PBXBuildFile; fileRef = 772B7DE12C662A3E000634BD /* KinopoiskAPI */; };
+		7748D6E62C68062D004DFBC6 /* FilmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748D6E52C68062D004DFBC6 /* FilmsView.swift */; };
+		7748D6E82C680654004DFBC6 /* FilmViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748D6E72C680654004DFBC6 /* FilmViewDetail.swift */; };
 		777887792C657A60002A73D0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777887782C657A60002A73D0 /* Store.swift */; };
 		7778877B2C657D33002A73D0 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778877A2C657D33002A73D0 /* AppReducer.swift */; };
 		7778877D2C657E18002A73D0 /* MoviesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778877C2C657E18002A73D0 /* MoviesReducer.swift */; };
@@ -27,6 +29,8 @@
 		772858292C65618F004DACCD /* WildzoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildzoneApp.swift; sourceTree = "<group>"; };
 		7728582B2C65618F004DACCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		772B7DE12C662A3E000634BD /* KinopoiskAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = KinopoiskAPI; sourceTree = "<group>"; };
+		7748D6E52C68062D004DFBC6 /* FilmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsView.swift; sourceTree = "<group>"; };
+		7748D6E72C680654004DFBC6 /* FilmViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmViewDetail.swift; sourceTree = "<group>"; };
 		777887782C657A60002A73D0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		7778877A2C657D33002A73D0 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7778877C2C657E18002A73D0 /* MoviesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesReducer.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 		772858282C65618F004DACCD /* Wildzone */ = {
 			isa = PBXGroup;
 			children = (
+				7748D6E42C680619004DFBC6 /* FilmsScreen */,
 				777887762C6578F9002A73D0 /* Store */,
 				777887752C6578EB002A73D0 /* Extensions */,
 				BCE3D6DF2C67CDCF0007CA7E /* Preview Content */,
@@ -97,6 +102,15 @@
 			);
 			name = Modules;
 			path = Wildzone/Modules;
+			sourceTree = "<group>";
+		};
+		7748D6E42C680619004DFBC6 /* FilmsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7748D6E52C68062D004DFBC6 /* FilmsView.swift */,
+				7748D6E72C680654004DFBC6 /* FilmViewDetail.swift */,
+			);
+			path = FilmsScreen;
 			sourceTree = "<group>";
 		};
 		777887752C6578EB002A73D0 /* Extensions */ = {
@@ -212,7 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				777887792C657A60002A73D0 /* Store.swift in Sources */,
+				7748D6E82C680654004DFBC6 /* FilmViewDetail.swift in Sources */,
 				77E6C16C2C67FDCA00E6AC8C /* Middleware.swift in Sources */,
+				7748D6E62C68062D004DFBC6 /* FilmsView.swift in Sources */,
 				777887812C658109002A73D0 /* String+Extensions.swift in Sources */,
 				7728582C2C65618F004DACCD /* ContentView.swift in Sources */,
 				7778877B2C657D33002A73D0 /* AppReducer.swift in Sources */,
