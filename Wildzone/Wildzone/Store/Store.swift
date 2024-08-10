@@ -6,22 +6,33 @@
 //
 
 import Foundation
+import KinopoiskAPI
 
 typealias Dispatcher = (Action) -> Void
-
 typealias Reducer<State: ReduxState> = (_ state: State, _ action: Action) -> State
 typealias Middleware<StoreState: ReduxState> = (StoreState, Action, @escaping Dispatcher) -> Void
 
 protocol ReduxState { }
 
 struct AppState: ReduxState {
-    // var movies = MoviesState()
+    var moviesState = MoviesState()
 }
 
-// Пример с фильмами
-// struct MoviesState: ReduxState {
-//     var movies = [Movie]()
-// }
+struct MoviesState: ReduxState {
+    var movies: [DocModel] = []
+    var isLoading: Bool = false
+    var error: Error?
+}
+
+struct FetchMoviesRequest: Action {}
+
+struct FetchMoviesSuccess: Action {
+    let movies: [DocModel]
+}
+
+struct FetchMoviesFailure: Action {
+    let error: Error
+}
 
 protocol Action { }
 

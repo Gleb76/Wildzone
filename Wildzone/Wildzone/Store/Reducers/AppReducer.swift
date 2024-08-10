@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import KinopoiskAPI
 
 func appReducer(_ state: AppState, _ action: Action) -> AppState {
-    
     var state = state
-//    state.movies = moviesReducer(state.movies, action)
+    
+    state.moviesState = moviesReducer(state.moviesState, action)
 
     return state
 }
+
