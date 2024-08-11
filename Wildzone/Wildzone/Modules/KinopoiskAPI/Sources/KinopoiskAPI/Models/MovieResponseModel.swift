@@ -22,7 +22,15 @@ public struct MovieResponseModel: Codable {
 }
 
 // MARK: - DocModel
-public struct DocModel: Codable {
+public struct DocModel: Codable, Hashable {
+    public static func == (lhs: DocModel, rhs: DocModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     public let internalNames: [String]?
     public let name, alternativeName, enName: String?
     public let year: Int?
