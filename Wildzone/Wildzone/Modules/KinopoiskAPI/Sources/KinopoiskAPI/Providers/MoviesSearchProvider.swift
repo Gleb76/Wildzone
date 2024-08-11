@@ -8,12 +8,13 @@
 import Foundation
 
 public struct MoviesSearchProvider {
-        
-    public init() {}
+    private let repository: KinopoiskRepository
+
+    public init(repository: KinopoiskRepository) {
+        self.repository = repository
+    }
     
-    mutating public func searchFilms(query: String, complete: @escaping (_ data: MovieResponseModel?, _ error: Error?) -> Void) {
-        KinopoiskAPI.searchFilmsGet(query: query){ data, error in
-            complete(data, error)
-        }
+    public func searchFilms(query: String, page: Int = 1, limit: Int = 10, complete: @escaping (_ data: MovieResponseModel?, _ error: Error?) -> Void) {
+        repository.searchFilms(query: query, page: page, limit: limit, completion: complete)
     }
 }
