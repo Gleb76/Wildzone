@@ -11,7 +11,7 @@ import AnyCodable
 #endif
 
 open class KinopoiskAPI {
-    static private var apiKeys = ["1JY71X8-2YS4676-PCAGFW2-AWK9YP8", "V5SHYKM-27G4090-N6G8NBD-KCNJZH1", "G34DN47-Q5YMY18-NHGEQDX-20VTZAW"]
+    static private var apiKeys = ["G34DN47-Q5YMY18-NHGEQDX-20VTZAW", "V5SHYKM-27G4090-N6G8NBD-KCNJZH1", "1JY71X8-2YS4676-PCAGFW2-AWK9YP8"]
     static private var currentApiKeyIndex = 0
 }
 
