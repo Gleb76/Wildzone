@@ -15,7 +15,7 @@ public struct SearchBarView: View {
     }
     
     public var body: some View {
-        TextField(LocalizedStringKey("search"), text: $searchText)
+        TextField(LocalizedStringKey(""), text: $searchText)
             .textStyle(with: .bodyText1)
             .padding(40)
             .frame(height: 36)

@@ -56,11 +56,11 @@ private extension FilmList {
             List {
                 Section {
                     VStack {
-                        SearchBarView(searchText: $text)
-                            .frame(height: 50)
-                            .padding(.top, 16)
-                            .padding(.horizontal, 24)
-                            .background(.clear)
+                        SearchBar(searchText: $text)
+//                            .frame(height: 50)
+//                            .padding(.top, 16)
+//                            .padding(.horizontal, 24)
+//                            .background(.clear)
                             .onChange(of: text, perform: { value in
                                 searchDebouncer.debounce(interval: 1.0) {
                                     store.dispatch(action: GetMoviesAction(query: value))
