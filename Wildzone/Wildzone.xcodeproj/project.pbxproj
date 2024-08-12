@@ -14,7 +14,8 @@
 		777887792C657A60002A73D0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777887782C657A60002A73D0 /* Store.swift */; };
 		7778877B2C657D33002A73D0 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778877A2C657D33002A73D0 /* AppReducer.swift */; };
 		7778877D2C657E18002A73D0 /* MoviesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778877C2C657E18002A73D0 /* MoviesReducer.swift */; };
-		77E6C16C2C67FDCA00E6AC8C /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6C16B2C67FDCA00E6AC8C /* Middleware.swift */; };
+		77893C032C6A4793001C5773 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77893C022C6A4793001C5773 /* Webservice.swift */; };
+		77893C052C6A47B3001C5773 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77893C042C6A47B3001C5773 /* MoviesViewModel.swift */; };
 		BCE3D6D92C67CA990007CA7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE3D6D82C67CA990007CA7E /* Assets.xcassets */; };
 		BCE3D6E22C67FAEF0007CA7E /* WildZoneUISystem in Frameworks */ = {isa = PBXBuildFile; productRef = BCE3D6E12C67FAEF0007CA7E /* WildZoneUISystem */; };
 		BCE3D6FE2C695C510007CA7E /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3D6FD2C695C510007CA7E /* FilmCell.swift */; };
@@ -30,7 +31,8 @@
 		777887782C657A60002A73D0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		7778877A2C657D33002A73D0 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7778877C2C657E18002A73D0 /* MoviesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesReducer.swift; sourceTree = "<group>"; };
-		77E6C16B2C67FDCA00E6AC8C /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		77893C022C6A4793001C5773 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		77893C042C6A47B3001C5773 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		BCE3D6D82C67CA990007CA7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCE3D6DD2C67CD890007CA7E /* WildZoneUISystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = WildZoneUISystem; sourceTree = "<group>"; };
 		BCE3D6E32C67FE810007CA7E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		772858282C65618F004DACCD /* Wildzone */ = {
 			isa = PBXGroup;
 			children = (
+				77893C012C6A4778001C5773 /* Sevice */,
+				77893C002C6A4771001C5773 /* ViewModel */,
 				BCE3D6FF2C6A00F10007CA7E /* Utilites */,
 				BCE3D6FB2C694B120007CA7E /* Preview Content */,
 				777887762C6578F9002A73D0 /* Store */,
@@ -106,7 +110,6 @@
 			children = (
 				777887772C657902002A73D0 /* Reducers */,
 				777887782C657A60002A73D0 /* Store.swift */,
-				77E6C16B2C67FDCA00E6AC8C /* Middleware.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -118,6 +121,22 @@
 				7778877C2C657E18002A73D0 /* MoviesReducer.swift */,
 			);
 			path = Reducers;
+			sourceTree = "<group>";
+		};
+		77893C002C6A4771001C5773 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77893C042C6A47B3001C5773 /* MoviesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77893C012C6A4778001C5773 /* Sevice */ = {
+			isa = PBXGroup;
+			children = (
+				77893C022C6A4793001C5773 /* Webservice.swift */,
+			);
+			path = Sevice;
 			sourceTree = "<group>";
 		};
 		BCE3D6FB2C694B120007CA7E /* Preview Content */ = {
@@ -246,7 +265,8 @@
 				BCE3D7072C6A08C60007CA7E /* FilmViewDetail.swift in Sources */,
 				BCE3D6FE2C695C510007CA7E /* FilmCell.swift in Sources */,
 				777887792C657A60002A73D0 /* Store.swift in Sources */,
-				77E6C16C2C67FDCA00E6AC8C /* Middleware.swift in Sources */,
+				77893C052C6A47B3001C5773 /* MoviesViewModel.swift in Sources */,
+				77893C032C6A4793001C5773 /* Webservice.swift in Sources */,
 				7728582C2C65618F004DACCD /* FilmList.swift in Sources */,
 				7778877B2C657D33002A73D0 /* AppReducer.swift in Sources */,
 				BCE3D7012C6A010C0007CA7E /* SearchDebouncer.swift in Sources */,
