@@ -12,14 +12,13 @@ struct WildzoneApp: App {
     @StateObject private var store = Store<AppState>(
         reducer: appReducer,
         state: AppState(),
-        middlewares: [loggingMiddleware]
+        middlewares: [moviesMiddleware()]
     )
-    
+
     var body: some Scene {
         WindowGroup {
             FilmList()
-                .background(.wbBG)
-                .environmentObject(store)
+                .environmentObject(store) 
         }
     }
 }
