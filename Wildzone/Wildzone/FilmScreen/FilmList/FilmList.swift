@@ -23,7 +23,6 @@ struct FilmList: View {
     
     private var proxy: ScrollViewProxy?
     
-    
     private let columns = [
         GridItem(.flexible(), spacing: 10)
     ]
@@ -68,7 +67,7 @@ private extension FilmList {
                                 }
                             })
                         postersHGrid
-                        genresHScrollView
+                        GenresHScrollView(genresModel: $genres, selectedGenre: $selectedGenre)
                     }
                     
                 }
@@ -102,32 +101,6 @@ private extension FilmList {
         .listRowBackground(Color.clear)
     }
     
-    var genresHScrollView: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                ForEach(genres, id: \.self) { genre in
-                    Button(action: {
-                        withAnimation {
-                            selectedGenre = genre
-                        }
-                    }) {
-                        Text(genre)
-                            .padding()
-                            .background(selectedGenre == genre ? Color.wbDefaultPurple : Color.clear)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                            .background(gradientView)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.wbText, lineWidth: 2)
-                            )
-                    }
-                }
-            }
-        }
-    }
-    
-    
     var postersHGrid: some View {
         Group {
             if !films.isEmpty {
@@ -144,14 +117,6 @@ private extension FilmList {
                 .frame(height: 220)
             }
         }
-    }
-    
-    var gradientView: some View {
-        LinearGradient(
-            colors: [Color.tDBackground1,Color.tDBackground2],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing)
-        .ignoresSafeArea()
     }
 }
 
