@@ -22,3 +22,16 @@ func moviesReducer(state: MoviesState, action: Action) -> MoviesState {
     
     return state
 }
+
+func filmDetailReducer(state: SimpleDocModel?, action: Action) -> SimpleDocModel? {
+    var state = state
+    
+    switch action {
+    case let action as SetFilmDetailAction:
+        state = action.film
+    default:
+        break
+    }
+    
+    return state
+}

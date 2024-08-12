@@ -15,7 +15,6 @@ struct SimpleDocModel {
     var description: String?
 }
 
-
 struct FilmDetailView: View {
     var film: SimpleDocModel
 
@@ -24,7 +23,6 @@ struct FilmDetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 if let posterUrlString = film.posterUrl,
                    let posterUrl = URL(string: posterUrlString) {
-                    // Используем AsyncImage для загрузки изображения по URL
                     AsyncImage(url: posterUrl) { phase in
                         switch phase {
                         case .empty:
@@ -50,7 +48,6 @@ struct FilmDetailView: View {
                         .frame(width: 200, height: 300)
                 }
 
-                // Название фильма
                 if let name = film.name {
                     Text(name)
                         .font(.title)
@@ -58,14 +55,12 @@ struct FilmDetailView: View {
                         .padding(.horizontal)
                 }
 
-                // Описание фильма
                 if let description = film.description {
                     Text(description)
                         .font(.body)
                         .padding(.horizontal)
                 }
 
-                // Рейтинг фильма
                 if let rating = film.rating {
                     Text("IMDB: \(rating, specifier: "%.1f")")
                         .font(.headline)

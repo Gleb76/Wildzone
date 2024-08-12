@@ -11,5 +11,7 @@ import KinopoiskAPI
 func appReducer(_ state: AppState, _ action: Action) -> AppState {
     var state = state
     state.moviesState = moviesReducer(state: state.moviesState, action: action)
+    state.filmDetailState = filmDetailReducer(state: state.filmDetailState, action: action)
     return state
 }
+
