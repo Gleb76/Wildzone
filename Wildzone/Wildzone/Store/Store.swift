@@ -8,9 +8,49 @@
 import Foundation
 import KinopoiskAPI
 
+enum NetworkError: Error {
+    case noData
+    case requestFailed
+    case decodingError
+}
+
 typealias Dispatcher = (Action) -> Void
+typealias Movie = DocModel
 typealias Reducer<State: ReduxState> = (_ state: State, _ action: Action) -> State
 typealias Middleware<StoreState: ReduxState> = (StoreState, Action, @escaping Dispatcher) -> Void
+
+func moviesMiddleware() -> Middleware<AppState> {
+    return { state, action, dispatch in
+        switch action {
+        case let action as GetMoviesAction:
+            Webservice().searchFilms(query: action.query) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let movies):
+                        dispatch(SetMoviesAction(movies: movies))
+                    case .failure(let error):
+                        print("Error fetching movies: \(error.localizedDescription)")
+                    }
+                }
+            }
+            
+        case _ as GetGenresAction:
+            Webservice().fetchGenres { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let genres):
+                        dispatch(SetGenresAction(genres: genres))
+                    case .failure(let error):
+                        print("Error fetching genres: \(error.localizedDescription)")
+                    }
+                }
+            }
+            
+        default:
+            break
+        }
+    }
+}
 
 protocol ReduxState { }
 
@@ -19,22 +59,25 @@ struct AppState: ReduxState {
 }
 
 struct MoviesState: ReduxState {
-    var movies: [DocModel] = []
-    var isLoading: Bool = false
-    var error: Error?
-}
-
-struct FetchMoviesRequest: Action {}
-
-struct FetchMoviesSuccess: Action {
-    let movies: [DocModel]
-}
-
-struct FetchMoviesFailure: Action {
-    let error: Error
+    var movies: [Movie] = [Movie]()
+    var genres: [String] = []
 }
 
 protocol Action { }
+
+struct GetMoviesAction: Action {
+    let query: String
+}
+
+struct GetGenresAction: Action {}
+
+struct SetGenresAction: Action {
+    let genres: [String]
+}
+
+struct SetMoviesAction: Action {
+    let movies: [Movie]
+}
 
 class Store<StoreState: ReduxState>: ObservableObject {
     
@@ -49,14 +92,13 @@ class Store<StoreState: ReduxState>: ObservableObject {
     }
     
     func dispatch(action: Action) {
-        // Применение middleware перед редьюсером
-        middlewares.forEach { middleware in
-            middleware(state, action, dispatch)
-        }
-        
-        // Обновление состояния через редьюсер
         DispatchQueue.main.async {
             self.state = self.reducer(self.state, action)
         }
+        
+        middlewares.forEach { middleware in
+            middleware(state, action, dispatch)
+        }
     }
 }
+
