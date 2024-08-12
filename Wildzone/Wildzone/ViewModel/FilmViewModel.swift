@@ -17,18 +17,5 @@ class FilmDetailViewModel: ObservableObject {
         self.film = store.state.filmDetailState
         store.$state.map(\.filmDetailState).assign(to: &$film)
     }
-    
-    func fetchFilmDetail(id: String) {
-        // Ваш код для загрузки данных о фильме и вызова dispatch
-        // Например:
-        // Webservice().fetchFilmDetail(id: id) { result in
-        //     switch result {
-        //     case .success(let film):
-        //         dispatch(SetFilmDetailAction(film: film))
-        //     case .failure(let error):
-        //         print("Error fetching film detail: \(error.localizedDescription)")
-        //     }
-        // }
-    }
 }
 
