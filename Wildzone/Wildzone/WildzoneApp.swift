@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct WildzoneApp: App {
+    @StateObject private var store = Store<AppState>(
+        reducer: appReducer,
+        state: AppState(),
+        middlewares: [moviesMiddleware()]
+    )
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FilmList()
+                .environmentObject(store) 
         }
     }
 }

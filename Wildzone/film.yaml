@@ -1,0 +1,537 @@
+openapi: 3.0.3
+info:
+  title: Kinopoisk API
+  description: api.kinopoisk
+  version: 1.0.0
+servers:
+  - url: https://api.kinopoisk.dev
+tags:
+  - name: title
+    description: Info about title
+paths:
+  /title:
+    get:
+      tags:
+        - title
+      summary: title List
+      operationId: titleGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - docs
+                  - total
+                  - limit
+                  - page
+                  - pages
+                properties:
+                  docs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        externalId:
+                          required:
+                            - kpHD
+                            - imdb
+                            - tmdb
+                          properties:
+                            kpHD:
+                              type: string
+                            imdb:
+                              type: string
+                            tmdb:
+                              type: number
+                          type: object
+                        name:
+                          type: string
+                        alternativeName:
+                          type: string
+                        enName:
+                          type: string
+                        names:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                              language:
+                                type: string
+                              type:
+                                type: string
+                        type:
+                          type: string
+                        typeNumber:
+                          type: number
+                        year:
+                          type: number
+                        description:
+                          type: string
+                        shortDescription:
+                          type: string
+                        slogan:
+                          type: string
+                        status:
+                          type: string
+                        facts:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              value:
+                                type: string
+                              type:
+                                type: string
+                              spoiler:
+                                type: boolean
+                        rating:
+                          required:
+                            - kp
+                            - imdb
+                            - tmdb
+                            - filmCritics
+                            - russianFilmCritics
+                            - await
+                          properties:
+                            kp:
+                              type: number
+                            imdb:
+                              type: number
+                            tmdb:
+                              type: number
+                            filmCritics:
+                              type: number
+                            russianFilmCritics:
+                              type: number
+                            await:
+                              type: number
+                          type: object
+                        votes:
+                          required:
+                            - kp
+                            - imdb
+                            - tmdb
+                            - filmCritics
+                            - russianFilmCritics
+                            - await
+                          properties:
+                            kp:
+                              type: string
+                            imdb:
+                              type: number
+                            tmdb:
+                              type: number
+                            filmCritics:
+                              type: number
+                            russianFilmCritics:
+                              type: number
+                            await:
+                              type: number
+                          type: object
+                        movieLength:
+                          type: number
+                        ratingMpaa:
+                          type: string
+                        ageRating:
+                          type: number
+                        logo:
+                          required:
+                            - url
+                          properties:
+                            url:
+                              type: string
+                          type: object
+                        poster:
+                          required:
+                            - url
+                            - previewUrl
+                          properties:
+                            url:
+                              type: string
+                            previewUrl:
+                              type: string
+                          type: object
+                        backdrop:
+                          required:
+                            - url
+                            - previewUrl
+                          properties:
+                            url:
+                              type: string
+                            previewUrl:
+                              type: string
+                          type: object
+                        videos:
+                          required:
+                            - trailers
+                          properties:
+                            trailers:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  url:
+                                    type: string
+                                  name:
+                                    type: string
+                                  site:
+                                    type: string
+                                  size:
+                                    type: number
+                                  type:
+                                    type: string
+                          type: object
+                        genres:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                        countries:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                        persons:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              photo:
+                                type: string
+                              name:
+                                type: string
+                              enName:
+                                type: string
+                              description:
+                                type: string
+                              profession:
+                                type: string
+                              enProfession:
+                                type: string
+                        reviewInfo:
+                          required:
+                            - count
+                            - positiveCount
+                            - percentage
+                          properties:
+                            count:
+                              type: number
+                            positiveCount:
+                              type: number
+                            percentage:
+                              type: string
+                          type: object
+                        seasonsInfo:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              number:
+                                type: number
+                              episodesCount:
+                                type: number
+                        budget:
+                          required:
+                            - value
+                            - currency
+                          properties:
+                            value:
+                              type: number
+                            currency:
+                              type: string
+                          type: object
+                        fees:
+                          required:
+                            - world
+                            - russia
+                            - usa
+                          properties:
+                            world:
+                              required:
+                                - value
+                                - currency
+                              properties:
+                                value:
+                                  type: number
+                                currency:
+                                  type: string
+                              type: object
+                            russia:
+                              required:
+                                - value
+                                - currency
+                              properties:
+                                value:
+                                  type: number
+                                currency:
+                                  type: string
+                              type: object
+                            usa:
+                              required:
+                                - value
+                                - currency
+                              properties:
+                                value:
+                                  type: number
+                                currency:
+                                  type: string
+                              type: object
+                          type: object
+                        premiere:
+                          required:
+                            - country
+                            - world
+                            - russia
+                            - digital
+                            - cinema
+                            - bluray
+                            - dvd
+                          properties:
+                            country:
+                              type: string
+                            world:
+                              type: string
+                            russia:
+                              type: string
+                            digital:
+                              type: string
+                            cinema:
+                              type: string
+                            bluray:
+                              type: string
+                            dvd:
+                              type: string
+                          type: object
+                        similarMovies:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                              enName:
+                                type: string
+                              alternativeName:
+                                type: string
+                              type:
+                                type: string
+                              poster:
+                                required:
+                                  - url
+                                  - previewUrl
+                                properties:
+                                  url:
+                                    type: string
+                                  previewUrl:
+                                    type: string
+                                type: object
+                              rating:
+                                required:
+                                  - kp
+                                  - imdb
+                                  - tmdb
+                                  - filmCritics
+                                  - russianFilmCritics
+                                  - await
+                                properties:
+                                  kp:
+                                    type: number
+                                  imdb:
+                                    type: number
+                                  tmdb:
+                                    type: number
+                                  filmCritics:
+                                    type: number
+                                  russianFilmCritics:
+                                    type: number
+                                  await:
+                                    type: number
+                                type: object
+                              year:
+                                type: number
+                        sequelsAndPrequels:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                              enName:
+                                type: string
+                              alternativeName:
+                                type: string
+                              type:
+                                type: string
+                              poster:
+                                required:
+                                  - url
+                                  - previewUrl
+                                properties:
+                                  url:
+                                    type: string
+                                  previewUrl:
+                                    type: string
+                                type: object
+                              rating:
+                                required:
+                                  - kp
+                                  - imdb
+                                  - tmdb
+                                  - filmCritics
+                                  - russianFilmCritics
+                                  - await
+                                properties:
+                                  kp:
+                                    type: number
+                                  imdb:
+                                    type: number
+                                  tmdb:
+                                    type: number
+                                  filmCritics:
+                                    type: number
+                                  russianFilmCritics:
+                                    type: number
+                                  await:
+                                    type: number
+                                type: object
+                              year:
+                                type: number
+                        watchability:
+                          required:
+                            - items
+                          properties:
+                            items:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  name:
+                                    type: string
+                                  logo:
+                                    required:
+                                      - url
+                                    properties:
+                                      url:
+                                        type: string
+                                    type: object
+                                  url:
+                                    type: string
+                          type: object
+                        releaseYears:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              start:
+                                type: number
+                              end:
+                                type: number
+                        top10:
+                          type: number
+                        top250:
+                          type: number
+                        ticketsOnSale:
+                          type: boolean
+                        totalSeriesLength:
+                          type: number
+                        seriesLength:
+                          type: number
+                        isSeries:
+                          type: boolean
+                        audience:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              count:
+                                type: number
+                              country:
+                                type: string
+                        lists:
+                          type: array
+                          items:
+                            type: string
+                        networks:
+                          required:
+                            - items
+                          properties:
+                            items:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  name:
+                                    type: string
+                                  logo:
+                                    required:
+                                      - url
+                                    properties:
+                                      url:
+                                        type: string
+                                    type: object
+                          type: object
+                        updatedAt:
+                          type: string
+                        createdAt:
+                          type: string
+                  total:
+                    type: number
+                  limit:
+                    type: number
+                  page:
+                    type: number
+                  pages:
+                    type: number
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorModel'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorModel'
+
+components:
+  schemas:
+    ErrorModel:
+      type: object
+      required:
+        - error
+        - code
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+      x-swift-hashable:
+        type: boolean
+    Source:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      x-swift-hashable:
+        type: boolean
