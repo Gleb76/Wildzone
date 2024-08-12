@@ -31,4 +31,6 @@ public extension Color {
     static let wbWhite = Color("wbWhite")
     static let wbYellow = Color("wbYellowA")
     static let wbBG = Color("wbBG")
+    static let tDBackground1 = Color("tDBackground1")
+    static let tDBackground2 = Color("tDBackground2")
 }
