@@ -13,18 +13,18 @@ struct FilmList: View {
     @State private var networkProvider: MoviesSearchProvider = MoviesSearchProvider(repository: KinopoiskRepositoryImpl())
     @State private var fetchGenres: KinopoiskValuesProvider = KinopoiskValuesProvider(repository: KinopoiskRepositoryImpl())
     
-    
+    @State private var showFilmDetail = false
+    @State private var selectedFilm: DocModel?
     @State private var text: String = .init("")
     @State private var genres: [String] = []
     @State private var genresDict: [String: [Int]] = [:]
-    
     @State private var films: [DocModel] = .init([])
     @State private var selectedGenre: String?
     
     private var proxy: ScrollViewProxy?
     
     
-    let columns = [
+    private let columns = [
         GridItem(.flexible(), spacing: 10)
     ]
     
@@ -33,27 +33,20 @@ struct FilmList: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBarView(searchText: $text)
-                    .frame(height: 50)
-                    .padding(.top, 16)
-                    .padding(.horizontal, 24)
-                    .background(.clear)
-                    .onChange(of: text, perform: { value in
-                        searchDebouncer.debounce(interval: 1.0) {
-                            
-                            
-                            searchFilms(query: value)
-                        }
-                    })
+                
                 filmsList
             }
-            .onAppear {
-                fetchData()
-                groupFilmsByGenre()
+        }
+        .sheet(isPresented: $showFilmDetail) {
+            if let film = selectedFilm {
+                FilmDetailView(film: SimpleDocModel(name: film.name, posterUrl: film.poster?.url, rating: film.rating?.imdb, description: film.description))
             }
         }
+        .onAppear {
+            fetchData()
+            groupFilmsByGenre()
+        }
     }
-    
 }
 
 //MARK: - Private PropertyViews
@@ -63,23 +56,35 @@ private extension FilmList {
         ScrollViewReader { proxy in
             List {
                 Section {
-                    HStack {
+                    VStack {
+                        SearchBarView(searchText: $text)
+                            .frame(height: 50)
+                            .padding(.top, 16)
+                            .padding(.horizontal, 24)
+                            .background(.clear)
+                            .onChange(of: text, perform: { value in
+                                searchDebouncer.debounce(interval: 1.0) {
+                                    searchFilms(query: value)
+                                }
+                            })
                         postersHGrid
                         genresHScrollView
                     }
+                    
                 }
                 .listRowBackground(Color.clear)
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
                 
                 ForEach(genresDict.keys.sorted(), id: \.self) { genre in
+                    
                     Section(header: Text(genre)) {
                         ForEach(genresDict[genre]!, id: \.self) { id in
                             if let film = films.first(where: { $0.id == id }) {
-//                                NavigationLink(destination: FilmDetailView(film: SimpleDocModel(name: film.name ?? "", posterUrl: film.poster?.url ?? "", rating: film.rating?.imdb ?? "", description: film.description ?? "") film)) {
-                                    FilmCell(film: film)
-                                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
-                                        .listRowSeparator(.hidden)
-//                                }
+                                FilmCell(film: film)
+                                    .onTapGesture {
+                                        selectedFilm = film
+                                        showFilmDetail = true
+                                    }
                             }
                         }
                     }
@@ -152,6 +157,7 @@ private extension FilmList {
 
 //MARK: - Private Methods
 private extension FilmList {
+    
     func fetchData() {
         networkProvider.searchFilms(query: "") { data, error in
             if let data = data {
@@ -170,6 +176,7 @@ private extension FilmList {
             genres.append(contentsOf: names)
         }
     }
+    
     func groupFilmsByGenre() {
         var dict: [String: [Int]] = [:]
         
@@ -190,6 +197,7 @@ private extension FilmList {
         
         genresDict = dict
     }
+    
     func searchFilms(query: String) {
         films.removeAll()
         networkProvider.searchFilms(query: query) { data, error in
