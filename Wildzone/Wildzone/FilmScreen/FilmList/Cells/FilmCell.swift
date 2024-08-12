@@ -27,10 +27,10 @@ struct FilmCell: View {
                     .font(.subheadline)
                     .lineLimit(3)
             }
-            .padding(.leading, 10)
+//            .padding(.leading, 10)
         }
-        .padding()
-        .background(Color.gray.opacity(0.1))
+        .listRowBackground(Color.wbBG)
+//        .padding()
         .cornerRadius(10)
     }
 }

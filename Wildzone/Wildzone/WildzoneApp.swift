@@ -17,7 +17,8 @@ struct WildzoneApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FilmList()
+                .background(.wbBG)
                 .environmentObject(store)
         }
     }
