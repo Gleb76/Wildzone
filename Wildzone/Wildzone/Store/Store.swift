@@ -56,11 +56,14 @@ protocol ReduxState { }
 
 struct AppState: ReduxState {
     var moviesState = MoviesState()
+    var filmDetailState: SimpleDocModel?
 }
 
 struct MoviesState: ReduxState {
-    var movies: [Movie] = [Movie]()
+    var movies: [Movie] = []
     var genres: [String] = []
+    var isLoading: Bool = false
+    var error: String? = nil
 }
 
 protocol Action { }
@@ -77,6 +80,10 @@ struct SetGenresAction: Action {
 
 struct SetMoviesAction: Action {
     let movies: [Movie]
+}
+
+struct SetFilmDetailAction: Action {
+    let film: SimpleDocModel
 }
 
 class Store<StoreState: ReduxState>: ObservableObject {
@@ -101,4 +108,5 @@ class Store<StoreState: ReduxState>: ObservableObject {
         }
     }
 }
+
 

@@ -32,10 +32,9 @@ struct FilmList: View {
         }
         .sheet(isPresented: $showFilmDetail) {
             if let film = selectedFilm {
-                FilmDetailView(film: SimpleDocModel(name: film.name, posterUrl: film.poster?.url, rating: film.rating?.imdb, description: film.description))
+                FilmDetailView(film: convertToSimpleDocModel(from: film))
             }
-        }
-        .onAppear {
+        }        .onAppear {
             fetchGenres()
             store.dispatch(action: GetMoviesAction(query: ""))
         }
@@ -176,7 +175,15 @@ private extension FilmList {
                 }
             }
         }
-        
         genresDict = dict
     }
+}
+
+private func convertToSimpleDocModel(from film: DocModel) -> SimpleDocModel {
+    SimpleDocModel(
+        name: film.name,
+        posterUrl: film.poster?.url,
+        rating: film.rating?.imdb,
+        description: film.description
+    )
 }

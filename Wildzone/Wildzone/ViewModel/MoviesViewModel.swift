@@ -22,4 +22,12 @@ class MoviesViewModel: ObservableObject {
     func dispatch(_ action: Action) {
         store.dispatch(action: action)
     }
+
+    func fetchMovies(query: String) {
+        dispatch(GetMoviesAction(query: query))
+    }
+
+    func fetchGenres() {
+        dispatch(GetGenresAction())
+    }
 }
